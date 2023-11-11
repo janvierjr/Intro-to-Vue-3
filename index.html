@@ -45,7 +45,13 @@
               >
               Add to Cart
             </button>
-            <button class="button" style="width: fit-content;" @click="removeFromCart">Remove from Cart</button>
+            <button
+              class="button"
+              :class="{ disabledButton: !inStock }"
+              style="width: fit-content;"
+              @click="removeFromCart"
+              :disabled="!inStock"
+              >Remove from Cart</button>
           </div>
         </div>
       </div>
