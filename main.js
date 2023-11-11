@@ -4,6 +4,8 @@ const app = Vue.createApp({
       product: 'Socks',
       image: './assets/images/socks_blue.jpg',
       url: 'https://www.berniejanuary.com/',
+      inStock: false,
+      inventory: 8
     };
   },
 });
