@@ -166,6 +166,10 @@ ul {
   padding: 0;
 }
 
+.onSale {
+  display: none;
+}
+
 @media only screen and (max-width: 600px) {
   .container {
     flex-direction: column;
