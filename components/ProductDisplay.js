@@ -3,7 +3,7 @@ app.component('product-display', {
     premium: {
       type: Boolean,
       required: true,
-    }
+    },
   },
   template:
     /*html*/
@@ -51,6 +51,11 @@ app.component('product-display', {
               >Remove from Cart</button>
         </div>
       </div>
+      <review-list v-if='reviews.length' :reviews='reviews'></review-list>
+      <review-form
+        @submit-error='submitError'
+        @review-submitted="submittedReview">
+      </review-form>
     </div>`,
   data() {
     return {
@@ -58,6 +63,8 @@ app.component('product-display', {
       brand: 'Vue Mastery',
       details: ['50% cotton', '30% wool', '20% polyester'],
       selectedVariant: 0,
+      reviews: [],
+      submitError: false,
       variants: [
         {
           id: 2234,
@@ -86,6 +93,13 @@ app.component('product-display', {
     updateVariant(index) {
       this.selectedVariant = index;
     },
+    submittedReview(productReview) {
+      this.reviews.push(productReview);
+      console.log(productReview);
+    },
+    submitError() {
+      this.submitError = true;
+    }
   },
   computed: {
     title() {

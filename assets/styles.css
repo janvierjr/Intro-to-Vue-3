@@ -146,6 +146,24 @@ p {
   margin: 30px auto;
 }
 
+.radio-container > input {
+  margin: 0;
+}
+
+
+.radio-container > label {
+  margin-right: 20px;
+}
+
+.radio-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: space-between;
+  margin: 0 auto 10px 0;
+}
+
+
 select {
   height: 40px;
   font-size: 20px;
